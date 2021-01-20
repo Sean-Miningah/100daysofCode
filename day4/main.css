@@ -41,6 +41,8 @@ img{
 .sidebar span{
     transform: rotate(-90deg);
     color: #000;
+    opacity: 1;
+    animation: fade-in ease-in .5s ,2s forwards;
 }
 
 /* selecting the second span */
@@ -57,6 +59,7 @@ img{
     grid-row: span 1;
     display: flex;
     align-items: center;
+    animation: fade-in ease-in .5s;
 }
 
 .container{
@@ -111,10 +114,14 @@ img{
     /* margin-bottom is added for separation */
     margin-bottom: 3rem;
     color: #000;
+    opacity: 0;
+    animation: fade-in-down ease-in .5s .5s forwards
 }
 
 .item-description{
     margin-bottom: 4rem;
+    opacity: 0;
+    animation: fade-in-down ease-in .5s 1s forwards
 }
 
 .btn{
@@ -174,4 +181,25 @@ img{
 
 span.selected{
     width: 3.5rem;
+    border-radius: 2rem;
+    background-color: #b61428;
+}
+
+@keyframes fade-in {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in-down {
+    from{
+        transform: translateY(-2.5rem);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
